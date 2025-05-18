@@ -82,4 +82,12 @@ model Authenticator {
  
   @@id([userId, credentialID])
 }
-
+model Movielist{
+  id Int @id @default(autoincrement())
+  name String
+  description String
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+  review String
+  rating Int
+}
