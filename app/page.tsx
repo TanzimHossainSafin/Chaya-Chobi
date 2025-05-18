@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { auth } from "@/auth";
-import Link from "next/link";
 async function getUser() {
   const session = await auth();
   return session?.user;
@@ -11,18 +10,9 @@ export default async function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
     <div className="flex flex-col items-center justify-center">
-    login_user:{user?.name}
-     <br/>
-     login_email:{user?.email}
-     <br/>
-     login_image:{user?.image}
-     <br/>
+    <h1 className="text-2xl font-bold">Welcome to the Home Page</h1>
+    <p className="text-sm text-gray-500">This is the home page of the website</p>
     </div>
-    <div className="flex  items-center justify-center gap-4" >
-      <Link href="/api/auth/signout">Logout</Link>
-      <Link href="/api/auth/signin">Login</Link>
-    </div>
-    
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
@@ -37,7 +27,7 @@ export default async function Home() {
             width={16}
             height={16}
           />
-          Learn
+          About us
         </a>
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
-import getServerSession from "next-auth";
-import authConfig from "@/auth.config";
-
+import AuthLinks from "@/app/components/AuthLinks";
+import { SessionProvider } from "next-auth/react";
+import Profile from "@/app/components/profile";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,16 +24,21 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await getServerSession(authConfig);
+  
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex items-center justify-end py-5 px-10 pl-10 gap-4" >   
-        {session ? <Link href="/api/auth/signout">Logout</Link> : <Link href="/api/auth/signin">Login</Link>}
-        </div>
-        {children}
+        <SessionProvider>
+        <div className="flex items-center justify-end py-5 px-10 pl-10 gap-4">
+            <div className="flex gap-4">
+            <AuthLinks />
+            <Profile />
+            </div>
+          </div>
+          {children}
+        </SessionProvider>
       </body>
     </html>
   );
