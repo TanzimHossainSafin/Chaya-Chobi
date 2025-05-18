@@ -3,7 +3,6 @@ import { auth } from "@/auth";
 import Link from "next/link";
 async function getUser() {
   const session = await auth();
-  console.log(session);
   return session?.user;
 }
 
@@ -18,7 +17,6 @@ export default async function Home() {
      <br/>
      login_image:{user?.image}
      <br/>
-
     </div>
     <div className="flex  items-center justify-center gap-4" >
       <Link href="/api/auth/signout">Logout</Link>
