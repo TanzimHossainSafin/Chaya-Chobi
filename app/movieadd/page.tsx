@@ -1,16 +1,13 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
-
 export default function MovieListPage() {
   const [movies, setMovies] = useState<any[]>([]);
   const [editId, setEditId] = useState<number | null>(null);
-
   const name = useRef<HTMLInputElement>(null);
   const description = useRef<HTMLInputElement>(null);
   const review = useRef<HTMLInputElement>(null);
   const rating = useRef<HTMLInputElement>(null);
-
   async function fetchMovies() {
     const res = await axios.get("/api/movielistApi");
     setMovies(res.data);
@@ -89,6 +86,8 @@ export default function MovieListPage() {
               <div className="text-md">{movie.description}</div>
               <div className="text-x text-gray-500">{movie.review}</div>
               <div className="text-x">Rating: {movie.rating}</div>
+              <div className="text-x">By: {movie.userName}</div>
+              <div className="text-x">Email: {movie.userEmail}</div>
             </div>
             <div className="flex gap-2">
               <button
