@@ -1,12 +1,5 @@
 import Image from "next/image";
-import { auth } from "@/auth";
-async function getUser() {
-  const session = await auth();
-  return session?.user;
-}
-
 export default async function Home() {
-  const user = await getUser();
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
     <div className="flex flex-col items-center justify-center">

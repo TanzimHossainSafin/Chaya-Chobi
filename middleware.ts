@@ -7,5 +7,5 @@ export default auth((req) => {
   }
 })
 export const config = {
-  matcher: ["/movielist","/movieadd"],
+  matcher: ["/movielist","/movieadd","/moviesuggestion"],
 }
