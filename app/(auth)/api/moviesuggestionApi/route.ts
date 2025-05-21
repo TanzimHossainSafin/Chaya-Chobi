@@ -5,7 +5,7 @@ export async function POST(req: Request) {
     const session = await auth();
     const userName=session?.user?.name;
     const movieDetails=await req.json();
-    const movieWatched=await prisma.movielist.findMany({
+    const movieWatched: { name: string }[] = await prisma.movielist.findMany({
         where: {
             userName:userName
         }
