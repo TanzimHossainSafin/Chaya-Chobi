@@ -15,7 +15,10 @@ export default function Navbar() {
                         <Link href='/moviesuggestion' className="hover:text-blue-400 transition duration-200 font-bold ">Suggestion</Link>
                     )}
                     {session && session.user && (
-                        <Link href='/movieadd' className="hover:text-blue-400 transition duration-200 font-bold ">Add</Link>
+                        <Link href='/movieadd' className="hover:text-blue-400 transition duration-200 font-bold ">MovieAdd</Link>
+                    )}
+                    {session && session.user && (
+                        <Link href='/moviePlatform' className="hover:text-blue-400 transition duration-200 font-bold ">Platform</Link>
                     )}
                 </div>
                 <div className='flex items-center gap-4'>

@@ -77,7 +77,7 @@ export default function MovieListPage() {
         <rect x="25" y="75" width="30" height="8" rx="2" fill="#222"/>
         <text x="40" y="82" textAnchor="middle" fontSize="8" fill="#fff" fontWeight="bold" fontFamily="Arial">MOVIE</text>
       </svg>
-      <h1 className="text-2xl font-bold mb-4">Add Your Favourite Movie</h1>
+      <h1 className="text-2xl font-bold mb-4">Add Your Favourite Movie Here 🍿</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-2 mb-6">
         <input type="text" placeholder="Movie Name" ref={name} required />
         <input type="text" placeholder="Description" ref={description} required />

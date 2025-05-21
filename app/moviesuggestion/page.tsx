@@ -36,12 +36,12 @@ export default function MoviesuggestionPage() {
                         <rect x="20" y="12" width="8" height="4" rx="2" fill="#6366f1"/>
                     </svg>
                 </div>
-                <h1 className="text-xl font-semibold text-gray-800 text-center mb-2">Movie Suggestion</h1>
+                <h1 className="text-xl font-semibold text-gray-800 text-center mb-2">Ask Chobi AI</h1>
                 <div className="flex flex-row gap-2 w-full">
                     <input
                         type="text"
                         ref={movieInputRef}
-                        placeholder="Enter a movie name..."
+                        placeholder="Enter Your Question..."
                         className="flex-1 border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-700"
                         disabled={loading}
                     />
@@ -63,7 +63,7 @@ export default function MoviesuggestionPage() {
             {/* Response Section */}
             <div className="w-full max-w-sm mt-6 flex justify-center">
                 <div className="w-full bg-gray-50 border border-gray-200 rounded-xl shadow p-5 min-h-[48px] flex items-center justify-center break-words text-center transition-all duration-200">
-                    <span className="text-base font-medium text-gray-800 w-full">{movieSuggestion || "Your suggestion will appear here."}</span>
+                    <span className="text-base font-medium text-gray-800 w-full">{movieSuggestion || "AI's suggestion will appear here."}</span>
                 </div>
             </div>
         </div>
