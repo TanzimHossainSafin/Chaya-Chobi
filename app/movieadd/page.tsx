@@ -83,13 +83,13 @@ export default function MovieListPage() {
         <input type="text" placeholder="Description" ref={description} required />
         <input type="text" placeholder="Review" ref={review} required />
         <input type="number" placeholder="Rating" ref={rating} required min={0} max={10} />
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
+        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer">
         {editId ? "Update Movie" : "Add Movie"}
         </button>
         {editId && (
           <button
             type="button"
-            className="bg-gray-400 text-white px-4 py-2 rounded"
+            className="bg-gray-400 text-white px-4 py-2 rounded cursor-pointer"
             onClick={() => {
               setEditId(null);
               if (name.current) name.current.value = "";
@@ -110,20 +110,20 @@ export default function MovieListPage() {
               <div className="text-md">{movie.description}</div>
               <div className="text-x text-gray-500">{movie.review}</div>
               <div className="text-x">Rating: {movie.rating}</div>
-              <div className="text-x">By: {movie.userName}</div>
+              <div className="text-x">Added By: {movie.userName}</div>
               <div className="text-x">Email: {movie.userEmail}</div>
             </div>
             <div className="flex gap-2">
               {movie.userEmail === currentUserEmail && (
                 <button
-                  className="bg-green-500 px-4 py-1 text-black rounded"
+                  className="bg-green-500 px-4 py-1 text-black rounded cursor-pointer"
                   onClick={() => handleEdit(movie)}
                 >
                   Edit
                 </button>
               )}
               {movie.userEmail === currentUserEmail && (<button
-                className="bg-red-500 text-white px-2 py-1 rounded"
+                className="bg-red-500 text-white px-2 py-1 rounded cursor-pointer"
                 onClick={() => handleDelete(movie.id)}
               >
                 Delete

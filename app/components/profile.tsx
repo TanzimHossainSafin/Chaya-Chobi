@@ -1,4 +1,5 @@
 "use client";
+import AuthLinks from "./AuthLinks";
 import { useSession } from "next-auth/react";
 export default function Profile() {
     const {data:session,status} = useSession();
@@ -6,6 +7,7 @@ export default function Profile() {
         <div>
            {status=="authenticated" &&(<div>
             {session.user?.image && (
+        
         <img
           src={session.user.image}
           alt="Profile"
