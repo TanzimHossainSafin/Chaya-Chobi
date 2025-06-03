@@ -3,7 +3,7 @@
 Chaya-Chobi is a web application built with [Next.js](https://nextjs.org) and bootstrapped using [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).  
 This project primarily uses TypeScript for robust and scalable development, with some CSS for styling.
 
----
+----
 
 ## Table of Contents
 - [Features](#features)
